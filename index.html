@@ -1,56 +1,426 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/test-two/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
-    <script type="module" crossorigin src="/test-two/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/test-two/assets/styles-guStct1H.css">
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Карьерный апгрейд и стратегии роста. Блог экспертов Cypher-Pack.">
+    <title>Cypher-Pack | Карьерный апгрейд</title>
+
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSIxNiIgZmlsbD0iIzBCMEYxOSIvPjxwYXRoIGQ9Ik0zMiAxMEw1MiAyMS41VjQyLjVMMzIgNTRMMTIgNDIuNVYyMS41TDMyIDEwWiIgc3Ryb2tlPSIjM0I4MkY2IiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjMyIiBjeT0iMzIiIHI9IjgiIGZpbGw9IiMxMEI5ODEiLz48cGF0aCBkPSJNMzIgMTBWMTgiIHN0cm9rZT0iIzNCODJGNCIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMzIgNDZWNTQiIHN0cm9rZT0iIzNCODJGNCIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48L3N2Zz4=">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script type="module" crossorigin src="/cypher-pack/index.js"></script>
+    <link rel="stylesheet" crossorigin href="/cypher-pack/assets/styles-CcqPUHmT.css">
   </head>
   <body>
-    <header class="header">
-  <div class="container">
-    <nav class="nav">
-      <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <svg class="nav-logo-icon" width="100" height="30">
-          <use href="{=$icon-path}"></use>
-        </svg>
+    <div class="top-bar">
+  <div class="container top-bar__container">
+      <div class="top-bar__info">
+          <a href="tel:+390212345678" class="top-bar__link">
+              <i data-lucide="phone" class="top-bar__icon"></i>
+              +39 02 1234 5678
+          </a>
+          <span class="top-bar__divider">|</span>
+          <span class="top-bar__text">Via Alessandro Manzoni, 38, Milano</span>
+      </div>
+      <a href="#contact" class="top-bar__action">
+          Связаться с нами
+          <i data-lucide="arrow-up-right" class="top-bar__arrow"></i>
       </a>
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-act}" href="./page-2.html">Page 2</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./page-3.html">Page 3</a>
-        </li>
-      </ul>
-    </nav>
+  </div>
+</div>
+
+<header class="header">
+  <div class="container header__container">
+      <a href="/" class="logo">
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSIxNiIgZmlsbD0iIzBCMEYxOSIvPjxwYXRoIGQ9Ik0zMiAxMEw1MiAyMS41VjQyLjVMMzIgNTRMMTIgNDIuNVYyMS41TDMyIDEwWiIgc3Ryb2tlPSIjM0I4MkY2IiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjMyIiBjeT0iMzIiIHI9IjgiIGZpbGw9IiMxMEI5ODEiLz48cGF0aCBkPSJNMzIgMTBWMTgiIHN0cm9rZT0iIzNCODJGNCIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMzIgNDZWNTQiIHN0cm9rZT0iIzNCODJGNCIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48L3N2Zz4=" alt="Cypher-Pack Icon" class="logo__icon">
+          <span class="logo__text">Cypher<span class="logo__highlight">-Pack</span></span>
+      </a>
+
+      <nav class="nav" id="nav">
+          <ul class="nav__list">
+              <li class="nav__item"><a href="#hero" class="nav__link">Главная</a></li>
+              <li class="nav__item"><a href="#about" class="nav__link">О платформе</a></li>
+              <li class="nav__item"><a href="#methodology" class="nav__link">Методология</a></li>
+              <li class="nav__item"><a href="#solutions" class="nav__link">Решения</a></li>
+              <li class="nav__item"><a href="#blog" class="nav__link">Блог</a></li>
+              <li class="nav__item"><a href="#reviews" class="nav__link">Отзывы</a></li>
+          </ul>
+          <button class="nav__close" id="nav-close">
+              <i data-lucide="x"></i>
+          </button>
+      </nav>
+
+      <button class="header__burger" id="burger">
+          <i data-lucide="menu"></i>
+      </button>
   </div>
 </header>
 
-
-    <main>
+    <main class="main" id="main-content">
       <!-- Loads the specified .html file -->
-      
+      <section class="hero" id="hero">
+  <div class="hero__glow"></div>
+
+  <div class="container hero__container">
+      <div class="hero__content">
+          <div class="hero__badge">
+              <span class="hero__badge-dot"></span>
+              Технология нового поколения
+          </div>
+
+          <h1 class="hero__title" id="hero-title">
+              Постройте карьеру,<br>
+              <span class="text-highlight">которая работает на вас</span>
+          </h1>
+
+          <p class="hero__desc" id="hero-desc">
+              Передовая цифровая инфраструктура для профессионального роста.
+              Воплотите мечты в реальность с экспертной поддержкой Cypher-Pack.
+              Решения, которые меняют правила игры.
+          </p>
+
+          <div class="hero__actions" id="hero-btns">
+              <a href="#contact" class="btn btn--primary">
+                  Начать сейчас
+                  <i data-lucide="arrow-right"></i>
+              </a>
+              <a href="#about" class="btn btn--glass">
+                  Узнать детали
+              </a>
+          </div>
+
+          <div class="hero__trust" id="hero-trust">
+              <div class="hero__trust-users">
+                  <img src="img/placeholder.png" alt="User" class="avatar">
+                  <img src="img/placeholder.png" alt="User" class="avatar">
+                  <img src="img/placeholder.png" alt="User" class="avatar">
+              </div>
+              <div class="hero__trust-text">
+                  <span class="val">500+</span>
+                  <span class="lbl">Предложение активно в странах ЕС</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="hero__visual">
+          <div class="blob-wrapper">
+              <div class="blob blob--1"></div>
+              <div class="blob blob--2"></div>
+              <div class="blob blob--3"></div>
+              <div class="blob-blur"></div>
+          </div>
+      </div>
+  </div>
+</section>
+<section class="section about" id="about">
+  <div class="container about__container">
+      <div class="section-header">
+          <span class="section-tag">О платформе</span>
+          <h2 class="section-title">Инновационная экосистема<br>для вашего роста</h2>
+      </div>
+      <div class="about__grid">
+          <div class="about__text">
+              <p>
+                  Cypher-Pack — это не просто консалтинг. Это передовая цифровая инфраструктура, объединяющая человеческую экспертизу и алгоритмы искусственного интеллекта.
+              </p>
+              <p>
+                  Мы помогаем специалистам из Италии и ЕС переосмыслить подход к развитию, предлагая стратегии, основанные на данных, а не на догадках.
+              </p>
+              <ul class="about__list">
+                  <li><i data-lucide="check-circle"></i> Проверенный партнер для 500+ клиентов</li>
+                  <li><i data-lucide="check-circle"></i> Технологии, которые работают на вас</li>
+                  <li><i data-lucide="check-circle"></i> Доступ к платформе открыт 24/7</li>
+              </ul>
+          </div>
+          <div class="about__stat-card">
+              <div class="stat-number">98%</div>
+              <div class="stat-desc">Клиентов достигают целей в первые 3 месяца</div>
+              <div class="stat-graph">
+                  <span></span><span></span><span></span><span></span><span></span>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="section methodology" id="methodology">
+  <div class="container">
+      <div class="section-header center">
+          <span class="section-tag">Преимущества</span>
+          <h2 class="section-title">Почему выбирают Cypher-Pack</h2>
+      </div>
+
+      <div class="swiper benefitsSwiper">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                  <div class="card">
+                      <div class="card__icon"><i data-lucide="trending-up"></i></div>
+                      <h3 class="card__title">Стратегия роста</h3>
+                      <p class="card__desc">Пошаговый путь, понятный каждому. Мы строим карту развития, исключая хаос и неопределенность.</p>
+                  </div>
+              </div>
+              <div class="swiper-slide">
+                  <div class="card">
+                      <div class="card__icon"><i data-lucide="cpu"></i></div>
+                      <h3 class="card__title">AI-инструменты</h3>
+                      <p class="card__desc">Используем алгоритмы для анализа рынка труда. Решения, которые меняют правила игры в вашу пользу.</p>
+                  </div>
+              </div>
+              <div class="swiper-slide">
+                  <div class="card">
+                      <div class="card__icon"><i data-lucide="shield-check"></i></div>
+                      <h3 class="card__title">Безопасность</h3>
+                      <p class="card__desc">Ваши данные под защитой. Мы используем европейские протоколы безопасности (GDPR Compliant).</p>
+                  </div>
+              </div>
+              <div class="swiper-slide">
+                  <div class="card">
+                      <div class="card__icon"><i data-lucide="zap"></i></div>
+                      <h3 class="card__title">Быстрый старт</h3>
+                      <p class="card__desc">Легко разобраться без опыта. Подключение к методологии занимает всего 2 минуты.</p>
+                  </div>
+              </div>
+              <div class="swiper-slide">
+                  <div class="card">
+                      <div class="card__icon"><i data-lucide="globe"></i></div>
+                      <h3 class="card__title">Глобальный охват</h3>
+                      <p class="card__desc">Методики, актуальные в любой точке Европы. Расширьте свои профессиональные горизонты.</p>
+                  </div>
+              </div>
+          </div>
+
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+      </div>
+  </div>
+</section>
+
+<section class="section innovations" id="solutions">
+  <div class="container">
+      <div class="innovations__wrapper">
+          <div class="innovations__content">
+              <span class="section-tag">Инновации</span>
+              <h2 class="section-title">Технология нового поколения</h2>
+              <p>
+                  Наша платформа анализирует тысячи карьерных треков, чтобы предложить вам оптимальный маршрут. Это технология для пассивного накопления профессионального капитала.
+              </p>
+              <a href="#contact" class="btn btn--primary">
+                  Оценить перспективы
+              </a>
+          </div>
+          <div class="innovations__visual">
+              <div class="code-block">
+                  <div class="code-line" style="--w: 80%"></div>
+                  <div class="code-line" style="--w: 60%"></div>
+                  <div class="code-line" style="--w: 90%"></div>
+                  <div class="code-line" style="--w: 40%"></div>
+                  <div class="scanner-line"></div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="section blog" id="blog">
+  <div class="container">
+      <div class="section-header">
+          <span class="section-tag">Блог экспертов</span>
+          <h2 class="section-title">Инсайты и тренды</h2>
+      </div>
+      <div class="blog-grid">
+          <article class="blog-card">
+              <div class="blog-card__img">
+                  <img src="img/placeholder.png" alt="AI Career">
+              </div>
+              <div class="blog-card__content">
+                  <span class="blog-date">02 Дек 2025</span>
+                  <h3 class="blog-title">Как AI меняет рынок труда в Италии</h3>
+                  <a href="#" class="blog-link">Читать статью <i data-lucide="arrow-right"></i></a>
+              </div>
+          </article>
+          <article class="blog-card">
+              <div class="blog-card__img">
+                  <img src="img/placeholder.png" alt="Strategy">
+              </div>
+              <div class="blog-card__content">
+                  <span class="blog-date">28 Ноя 2025</span>
+                  <h3 class="blog-title">5 шагов к международной карьере</h3>
+                  <a href="#" class="blog-link">Читать статью <i data-lucide="arrow-right"></i></a>
+              </div>
+          </article>
+          <article class="blog-card">
+              <div class="blog-card__img">
+                  <img src="img/placeholder.png" alt="Soft Skills">
+              </div>
+              <div class="blog-card__content">
+                  <span class="blog-date">15 Ноя 2025</span>
+                  <h3 class="blog-title">Soft Skills: валюта будущего</h3>
+                  <a href="#" class="blog-link">Читать статью <i data-lucide="arrow-right"></i></a>
+              </div>
+          </article>
+      </div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="container contact__container">
+      <div class="contact__info">
+          <h2 class="section-title">Готовы начать?</h2>
+          <p class="contact__desc">
+              Заполните форму, чтобы получить бесплатную консультацию. Экспертная поддержка на всех этапах.
+          </p>
+
+          <div class="contact__details">
+              <div class="contact__item">
+                  <div class="contact__icon"><i data-lucide="mail"></i></div>
+                  <div>
+                      <h4>Email</h4>
+                      <p>support@node-onix.today</p>
+                  </div>
+              </div>
+              <div class="contact__item">
+                  <div class="contact__icon"><i data-lucide="phone"></i></div>
+                  <div>
+                      <h4>Телефон</h4>
+                      <p>+39 02 1234 5678</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="contact__form-wrapper">
+          <form class="form" id="contact-form" novalidate>
+              <div class="form__group">
+                  <label for="name" class="form__label">Ваше имя</label>
+                  <input type="text" id="name" class="form__input" placeholder="Иван Петров" required>
+                  <span class="form__error">Введите имя</span>
+              </div>
+
+              <div class="form__group">
+                  <label for="email" class="form__label">Email</label>
+                  <input type="email" id="email" class="form__input" placeholder="example@mail.com" required>
+                  <span class="form__error">Введите корректный email</span>
+              </div>
+
+              <div class="form__group">
+                  <label for="phone" class="form__label">Телефон (только цифры)</label>
+                  <input type="tel" id="phone" class="form__input" placeholder="390000000000" inputmode="numeric" required>
+                  <span class="form__error">Телефон должен содержать только цифры (минимум 8)</span>
+              </div>
+
+              <div class="form__group">
+                  <label class="form__label">Подтвердите, что вы человек: <span id="math-problem"></span> = ?</label>
+                  <input type="number" id="captcha" class="form__input" required>
+                  <span class="form__error">Неверный результат</span>
+              </div>
+
+              <div class="form__checkbox-wrapper">
+                  <input type="checkbox" id="policy" class="form__checkbox" required>
+                  <label for="policy" class="form__checkbox-label">
+                      Я согласен с <a href="privacy.html">Политикой конфиденциальности</a>
+                  </label>
+              </div>
+
+              <button type="submit" class="btn btn--primary form__submit">
+                  Отправить заявку
+              </button>
+
+              <div class="form__success" id="form-success">
+                  <i data-lucide="check-circle"></i>
+                  <span>Заявка успешно отправлена! Мы свяжемся с вами.</span>
+              </div>
+          </form>
+      </div>
+  </div>
+</section>
+
+
     </main>
 
     <footer class="footer">
-  <div class="container">
-    <p class="footer-desc">
-      Made with ✨ by
-      <a
-        class="footer-link"
-        href="https://goit.global/ua/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT team
-      </a>
-    </p>
+  <div class="container footer__container">
+      <div class="footer__col">
+          <a href="/" class="logo logo--footer">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSIxNiIgZmlsbD0iIzBCMEYxOSIvPjxwYXRoIGQ9Ik0zMiAxMEw1MiAyMS41VjQyLjVMMzIgNTRMMTIgNDIuNVYyMS41TDMyIDEwWiIgc3Ryb2tlPSIjM0I4MkY2IiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjMyIiBjeT0iMzIiIHI9IjgiIGZpbGw9IiMxMEI5ODEiLz48cGF0aCBkPSJNMzIgMTBWMTgiIHN0cm9rZT0iIzNCODJGNCIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMzIgNDZWNTQiIHN0cm9rZT0iIzNCODJGNCIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48L3N2Zz4=" alt="Cypher-Pack Icon" class="logo__icon">
+              <span class="logo__text">Cypher<span class="logo__highlight">-Pack</span></span>
+          </a>
+          <p class="footer__desc">
+              Инновационная технология для построения карьеры, которая работает на вас. Переосмыслите подход к развитию.
+          </p>
+          <div class="footer__socials">
+              <a href="#" class="footer__social-link"><i data-lucide="linkedin"></i></a>
+              <a href="#" class="footer__social-link"><i data-lucide="twitter"></i></a>
+              <a href="#" class="footer__social-link"><i data-lucide="instagram"></i></a>
+          </div>
+      </div>
+
+      <div class="footer__col">
+          <h3 class="footer__title">Навигация</h3>
+          <ul class="footer__menu">
+              <li><a href="#about" class="footer__link">О платформе</a></li>
+              <li><a href="#methodology" class="footer__link">Методология</a></li>
+              <li><a href="#solutions" class="footer__link">Решения</a></li>
+              <li><a href="#blog" class="footer__link">Блог экспертов</a></li>
+              <li><a href="#contact" class="footer__link">Консультация</a></li>
+          </ul>
+      </div>
+
+      <div class="footer__col">
+          <h3 class="footer__title">Правовая информация</h3>
+          <ul class="footer__menu">
+              <li><a href="privacy.html" class="footer__link">Политика конфиденциальности</a></li>
+              <li><a href="cookies.html" class="footer__link">Cookie политика</a></li>
+              <li><a href="terms.html" class="footer__link">Условия использования</a></li>
+              <li><a href="return.html" class="footer__link">Политика возврата</a></li>
+              <li><a href="disclaimer.html" class="footer__link">Отказ от ответственности</a></li>
+              <li><a href="personal-data-policy.html" class="footer__link">Обработка данных</a></li>
+          </ul>
+      </div>
+
+      <div class="footer__col">
+          <h3 class="footer__title">Контакты</h3>
+          <ul class="footer__contacts">
+              <li class="footer__contact-item">
+                  <i data-lucide="map-pin"></i>
+                  <span>Via Alessandro Manzoni, 38<br>20121 Milano, Italy</span>
+              </li>
+              <li class="footer__contact-item">
+                  <i data-lucide="mail"></i>
+                  <a href="mailto:hello@cypher-pack.click">hello@cypher-pack.click</a>
+              </li>
+              <li class="footer__contact-item">
+                  <i data-lucide="phone"></i>
+                  <a href="tel:+390212345678">+39 02 1234 5678</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+
+  <div class="footer__bottom">
+      <div class="container footer__bottom-container">
+          <p>&copy; 2025 Cypher-Pack. Все права защищены.</p>
+          <p>Designed for Future Leaders.</p>
+      </div>
   </div>
 </footer>
-
+    <div class="cookie-popup" id="cookie-popup">
+      <div class="cookie-content">
+          <p>Этот сайт использует cookies для улучшения работы. Подробнее — в нашей <a href="cookies.html">Cookie политике</a>.</p>
+          <button class="btn btn--primary btn--sm" id="accept-cookies">Принять</button>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+      lucide.createIcons();
+  </script>
+  <script src="https://unpkg.com/split-type"></script>
 
   </body>
 </html>
